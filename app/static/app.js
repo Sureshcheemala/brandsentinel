@@ -67,6 +67,9 @@ function viewLogin() {
     S.token = r.token; S.user = r.user; sessionStorage.setItem("bs_token", r.token); sessionStorage.setItem("bs_user", JSON.stringify(r.user)); go("items"); render();
   })}, h("h2", {}, "Sign in"), h("label", {for: "u"}, "Username"), u, h("label", {for: "p"}, "Password"), p,
     h("p", {}, h("button", {class: "btn"}, "Sign in")),
+    h("h3", {}, "Try it in one click (demo accounts)"),
+    h("div", {class: "row"}, [["Ana (creator)", "ana"], ["Mira (reviewer)", "mira"], ["Raj (manager)", "raj"], ["Root (admin)", "root"]].map(([label, name]) =>
+      h("button", {type: "button", class: "btn secondary", onclick: () => { u.value = name; p.value = "demo123"; f.requestSubmit(); }}, label))),
     h("p", {class: "muted"}, "Demo users: ana and ben (creators), mira (reviewer), raj (manager), root (admin). Default password: demo123."));
   return f;
 }

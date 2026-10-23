@@ -203,6 +203,12 @@ def disclosure(ctx):
 disclosure.public = True
 
 
+@route("GET", "/api/health")
+def health(ctx):
+    return 200, {"ok": True, "service": "brandsentinel"}
+health.public = True
+
+
 # ------------------------------------------------------------------ brand kit
 @route("GET", "/api/brandkit")
 def get_kit(ctx):

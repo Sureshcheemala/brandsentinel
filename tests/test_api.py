@@ -214,6 +214,11 @@ class ApiTests(unittest.TestCase):
         self.assertIn("<script>", d["latest"]["content"])  # UI renders with textContent; API returns data only
 
 
+    def test_health_endpoint_is_public(self):
+        code, body = call(self.base, "GET", "/api/health")
+        self.assertEqual(code, 200)
+        self.assertTrue(body["ok"])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -11,4 +11,6 @@ The source code, tests, evaluation cases, sample brand kit and documentation in 
 - Statistics quoted in the Round 1 plan come from public web sources listed there; several are vendor-published and second-hand.
 
 ## Build-window statement
-**Team to complete.** The event requires that development happens inside the official build window. Use the repository's commit history to show when the work was done, and state any material prepared before the window (research, planning documents) as such.
+The base application (rules engine, server, UI, brand kit, tests, evaluation sets and documentation) was generated with Claude on **21 October 2026 (IST)**, before the Round 2 window opened on 22 October at 10:00 AM IST. It is disclosed as previously created code. Work done inside the window starts on 23 October and is listed in `docs/ROUND2_SUBMISSION.md` section 6, with true timestamps in the repository's commit history. Round 1 research and planning were done before the window, as the rules allow.
+
+**Team to confirm:** that this statement is accurate and that each member can explain the code.
