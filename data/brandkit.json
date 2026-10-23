@@ -1,0 +1,95 @@
+{
+  "brand": "Lumora",
+  "note": "Fictional sample brand kit authored for BrandSentinel demos. Not a real company.",
+  "guidelines": [
+    {"id": "G-NAME", "title": "Brand and product names", "text": "Write the company name as 'Lumora' (capital L, rest lowercase). The product is 'Lumora Cloud'. Never 'Lumora Online'."},
+    {"id": "G-VOICE", "title": "Voice: clear, warm, confident", "text": "Write plain, friendly sentences under 28 words. Avoid hype words, jargon and shouting. Use at most one exclamation mark per piece."},
+    {"id": "G-LANG", "title": "Preferred terminology", "text": "Use 'email' not 'e-mail', 'use' not 'utilize', 'affordable' not 'cheap'."},
+    {"id": "G-INCL", "title": "Inclusive language", "text": "Address people as 'everyone' or 'team', not 'guys'. Use 'blocklist' and 'allowlist'."},
+    {"id": "G-CLAIMS", "title": "Claims policy", "text": "Every number, ranking or guarantee must match an approved fact that is still valid. No unsupported superlatives or absolute promises."},
+    {"id": "G-OFFERS", "title": "Offers and disclaimers", "text": "Any offer, discount or free trial must carry the standard terms line."},
+    {"id": "G-ACCESS", "title": "Accessibility", "text": "Text needs 4.5:1 contrast (3:1 for large text). Every informative image needs meaningful alt text. Links must describe their destination."},
+    {"id": "G-VISUAL", "title": "Colour and logo use", "text": "Use only palette colours. Use only approved logo files at their original proportions."}
+  ],
+  "terminology": [
+    {"id": "TERM-001", "pattern": "(?<![\\w./@-])lumora(?!\\.[a-z])\\b", "ignorecase": true, "exact_use": true, "use": "Lumora", "severity": "medium", "guideline": "G-NAME", "message": "The company name is written 'Lumora'."},
+    {"id": "TERM-002", "pattern": "\\blumora online\\b", "ignorecase": true, "exact_use": false, "use": "Lumora Cloud", "severity": "high", "guideline": "G-NAME", "message": "The product is called 'Lumora Cloud'; 'Lumora Online' is not a product name."},
+    {"id": "TERM-003", "pattern": "\\be-mail(s)?\\b", "ignorecase": true, "exact_use": false, "use": "email", "severity": "low", "guideline": "G-LANG", "message": "Use 'email' without a hyphen."},
+    {"id": "TERM-004", "pattern": "\\bcheap\\b", "ignorecase": true, "exact_use": false, "use": "affordable", "severity": "low", "guideline": "G-LANG", "message": "'Cheap' undersells the product; say 'affordable'."},
+    {"id": "TERM-005", "pattern": "\\butili[sz]e\\b", "ignorecase": true, "exact_use": false, "use": "use", "severity": "low", "guideline": "G-LANG", "message": "Prefer the plain word 'use'."},
+    {"id": "TERM-006", "pattern": "\\bguys\\b", "ignorecase": true, "exact_use": false, "use": "everyone", "severity": "medium", "guideline": "G-INCL", "message": "Use inclusive wording such as 'everyone' or 'team'."},
+    {"id": "TERM-007", "pattern": "\\bblacklist\\b", "ignorecase": true, "exact_use": false, "use": "blocklist", "severity": "medium", "guideline": "G-INCL", "message": "Use 'blocklist'."},
+    {"id": "TERM-008", "pattern": "\\bwhitelist\\b", "ignorecase": true, "exact_use": false, "use": "allowlist", "severity": "medium", "guideline": "G-INCL", "message": "Use 'allowlist'."}
+  ],
+  "voice": {
+    "guideline": "G-VOICE",
+    "max_sentence_words": 28,
+    "max_exclamations": 1,
+    "hype": {
+      "revolutionary": "new",
+      "game-changing": "helpful",
+      "world-class": "dependable",
+      "unbelievable": "impressive",
+      "cutting-edge": "modern",
+      "mind-blowing": "useful"
+    },
+    "jargon": {
+      "synergy": "teamwork",
+      "leverage": "use",
+      "paradigm shift": "change",
+      "circle back": "follow up"
+    }
+  },
+  "facts": [
+    {"id": "FACT-UPTIME", "statement": "Lumora Cloud uptime was 99.9% over the last 12 months.", "keywords": ["uptime"], "min_match": 1, "value": "99.9", "approved_wording": "Lumora Cloud delivered 99.9% uptime over the last 12 months.", "valid_until": "2027-06-30", "allow_superlative": false, "source": "Reliability report, Q3 2026"},
+    {"id": "FACT-TEAMS", "statement": "More than 2,000 teams use Lumora Cloud.", "keywords": ["teams", "use"], "min_match": 2, "value": "2000", "approved_wording": "More than 2,000 teams use Lumora Cloud.", "valid_until": "2027-03-31", "allow_superlative": false, "source": "Customer metrics, Sept 2026"},
+    {"id": "FACT-SUPPORT", "statement": "Support replies within 4 business hours.", "keywords": ["support", "hours"], "min_match": 2, "value": "4", "approved_wording": "Our support team replies within 4 business hours.", "valid_until": "2027-03-31", "allow_superlative": false, "source": "Support policy v3"},
+    {"id": "FACT-TRIAL", "statement": "The free trial lasts 14 days.", "keywords": ["trial", "days"], "min_match": 2, "value": "14", "approved_wording": "Try Lumora Cloud free for 14 days.", "valid_until": "2027-12-31", "allow_superlative": false, "source": "Pricing page, Oct 2026"},
+    {"id": "FACT-PRICE", "statement": "Plans start at $12 per user per month.", "keywords": ["start", "month"], "min_match": 2, "value": "12", "approved_wording": "Plans start at $12 per user per month.", "valid_until": "2027-03-31", "allow_superlative": false, "source": "Pricing page, Oct 2026"},
+    {"id": "FACT-SPRING-PROMO", "statement": "Spring promotion: 20% off annual plans.", "keywords": ["off", "annual"], "min_match": 2, "value": "20", "approved_wording": "Save 20% on annual plans.", "valid_until": "2026-03-31", "allow_superlative": false, "source": "Spring campaign brief (expired)"}
+  ],
+  "claims_policy": {
+    "guideline": "G-CLAIMS",
+    "risky": [
+      {"phrase": "best", "alt": "a leading", "severity": "medium"},
+      {"phrase": "#1", "alt": "", "severity": "medium"},
+      {"phrase": "number one", "alt": "a leading", "severity": "medium"},
+      {"phrase": "fastest", "alt": "fast", "severity": "medium"},
+      {"phrase": "guaranteed", "alt": "designed to be", "severity": "high"},
+      {"phrase": "100% secure", "alt": "built with security in mind", "severity": "high"},
+      {"phrase": "risk-free", "alt": "low-risk", "severity": "high"},
+      {"phrase": "never fails", "alt": "is built to be reliable", "severity": "high"},
+      {"phrase": "unlimited", "alt": "generous", "severity": "medium"},
+      {"phrase": "clinically proven", "alt": "", "severity": "high"}
+    ]
+  },
+  "disclaimers": [
+    {"id": "DISC-OFFER", "trigger": "\\b(free trial|\\d+% off|discount|save \\d+%|special offer)\\b", "text": "Terms apply.", "guideline": "G-OFFERS"},
+    {"id": "DISC-TRIAL", "trigger": "\\bfree for \\d+ days\\b", "text": "Terms apply.", "guideline": "G-OFFERS"}
+  ],
+  "accessibility": {
+    "guideline": "G-ACCESS",
+    "min_contrast": 4.5,
+    "min_contrast_large": 3.0,
+    "weak_alt": ["image", "photo", "picture", "graphic", "img", "logo"],
+    "weak_link_text": ["click here", "here", "read more", "learn more", "link"]
+  },
+  "visual": {
+    "guideline": "G-VISUAL",
+    "palette": {
+      "primary-blue": "#1F4FD8",
+      "deep-navy": "#0B1F4D",
+      "amber": "#F5A524",
+      "mist": "#F4F6FB",
+      "ink": "#1A1A1A",
+      "white": "#FFFFFF"
+    },
+    "assets": [
+      {"filename": "logo-primary.svg", "kind": "logo", "width": 400, "height": 100},
+      {"filename": "logo-mono.svg", "kind": "logo", "width": 400, "height": 100},
+      {"filename": "icon.png", "kind": "icon", "width": 256, "height": 256}
+    ],
+    "logo_ratio_tolerance": 0.05,
+    "min_image_width": 600
+  }
+}

@@ -1,0 +1,14 @@
+[
+ {"id":"h01","kind":"text","text":"Lumora's new boards are here.","expect":[]},
+ {"id":"h02","kind":"text","text":"We have over 2000 teams on Lumora Cloud, and growing.","expect":[]},
+ {"id":"h03","kind":"text","text":"Trusted by thousands of teams worldwide.","expect":[]},
+ {"id":"h04","kind":"text","text":"Enjoy 25% off your first year!","expect":["CLAIM-UNVERIFIED","DISC-OFFER"]},
+ {"id":"h05","kind":"text","text":"Never miss a deadline again, with unlimited projects.","expect":["CLAIM-UNSUPPORTED"]},
+ {"id":"h06","kind":"text","text":"The Lumora team wishes you a calm weekend.","expect":[]},
+ {"id":"h07","kind":"text","text":"Our support team will reply within 2 business days.","expect":[]},
+ {"id":"h08","kind":"text","text":"Upgrade now: plans start at $15 per user per month.","expect":["CLAIM-MISMATCH"]},
+ {"id":"h09","kind":"html","text":"<img src=\"team.jpg\" alt=\"team.jpg\">","expect":["AX-ALT-WEAK"]},
+ {"id":"h10","kind":"html","text":"<h1 style=\"color:#0B1F4D;background:#F4F6FB\">Plan together</h1>","expect":[]},
+ {"id":"h11","kind":"text","text":"Fastest onboarding in the industry.","expect":["CLAIM-UNSUPPORTED"]},
+ {"id":"h12","kind":"text","text":"Build a whitelist of approved vendors.","expect":["TERM-008"]}
+]

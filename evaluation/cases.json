@@ -1,0 +1,340 @@
+[
+ {
+  "id": "c01",
+  "kind": "text",
+  "text": "Welcome to LUMORA, the place for every team.",
+  "expect": [
+   "TERM-001"
+  ]
+ },
+ {
+  "id": "c02",
+  "kind": "text",
+  "text": "Visit lumora.com or write to hello@lumora.com.",
+  "expect": []
+ },
+ {
+  "id": "c03",
+  "kind": "text",
+  "text": "Try Lumora Online for your next project.",
+  "expect": [
+   "TERM-002"
+  ]
+ },
+ {
+  "id": "c04",
+  "kind": "text",
+  "text": "Send us an e-mail and we will reply.",
+  "expect": [
+   "TERM-003"
+  ]
+ },
+ {
+  "id": "c05",
+  "kind": "text",
+  "text": "A cheap way to plan work.",
+  "expect": [
+   "TERM-004"
+  ]
+ },
+ {
+  "id": "c06",
+  "kind": "text",
+  "text": "You can utilize boards to plan sprints.",
+  "expect": [
+   "TERM-005"
+  ]
+ },
+ {
+  "id": "c07",
+  "kind": "text",
+  "text": "Hey guys, the update is live.",
+  "expect": [
+   "TERM-006"
+  ]
+ },
+ {
+  "id": "c08",
+  "kind": "text",
+  "text": "Add the address to the blacklist and the whitelist.",
+  "expect": [
+   "TERM-007",
+   "TERM-008"
+  ]
+ },
+ {
+  "id": "c09",
+  "kind": "text",
+  "text": "More than 2,000 teams use Lumora Cloud.",
+  "expect": []
+ },
+ {
+  "id": "c10",
+  "kind": "text",
+  "text": "More than 5,000 teams use Lumora Cloud.",
+  "expect": [
+   "CLAIM-MISMATCH"
+  ]
+ },
+ {
+  "id": "c11",
+  "kind": "text",
+  "text": "Lumora Cloud delivered 99.9% uptime over the last 12 months.",
+  "expect": []
+ },
+ {
+  "id": "c12",
+  "kind": "text",
+  "text": "Lumora Cloud delivered 99.99% uptime this year.",
+  "expect": [
+   "CLAIM-MISMATCH"
+  ]
+ },
+ {
+  "id": "c13",
+  "kind": "text",
+  "text": "Plans start at $12 per user per month.",
+  "expect": []
+ },
+ {
+  "id": "c14",
+  "kind": "text",
+  "text": "Plans start at $9 per user per month.",
+  "expect": [
+   "CLAIM-MISMATCH"
+  ]
+ },
+ {
+  "id": "c15",
+  "kind": "text",
+  "text": "Save 20% off annual plans. Terms apply.",
+  "expect": [
+   "CLAIM-OUTDATED"
+  ]
+ },
+ {
+  "id": "c16",
+  "kind": "text",
+  "text": "Our customers report 300% faster delivery.",
+  "expect": [
+   "CLAIM-UNVERIFIED"
+  ]
+ },
+ {
+  "id": "c17",
+  "kind": "text",
+  "text": "We are the best project tool.",
+  "expect": [
+   "CLAIM-UNSUPPORTED"
+  ]
+ },
+ {
+  "id": "c18",
+  "kind": "text",
+  "text": "Your data is guaranteed safe and the trial is risk-free.",
+  "expect": [
+   "CLAIM-UNSUPPORTED"
+  ]
+ },
+ {
+  "id": "c19",
+  "kind": "text",
+  "text": "Read our best practices guide.",
+  "expect": []
+ },
+ {
+  "id": "c20",
+  "kind": "text",
+  "text": "Start your free trial today.",
+  "expect": [
+   "DISC-OFFER"
+  ]
+ },
+ {
+  "id": "c21",
+  "kind": "text",
+  "text": "Start your free trial today. Terms apply.",
+  "expect": []
+ },
+ {
+  "id": "c22",
+  "kind": "text",
+  "text": "This revolutionary, game-changing tool is here.",
+  "expect": [
+   "VOICE-HYPE"
+  ]
+ },
+ {
+  "id": "c23",
+  "kind": "text",
+  "text": "Great news! Boards are faster! You will love it!",
+  "expect": [
+   "VOICE-EXCLAIM"
+  ]
+ },
+ {
+  "id": "c24",
+  "kind": "text",
+  "text": "Please circle back and leverage the synergy.",
+  "expect": [
+   "VOICE-JARGON"
+  ]
+ },
+ {
+  "id": "c25",
+  "kind": "text",
+  "text": "JOIN US TODAY for the webinar.",
+  "expect": [
+   "VOICE-CAPS"
+  ]
+ },
+ {
+  "id": "c26",
+  "kind": "text",
+  "text": "Lumora Cloud helps every team plan work, track progress, share updates with colleagues across offices, review results together every single week, and decide what to build next quarter, all without any of the usual confusion that slows growing organisations down.",
+  "expect": [
+   "VOICE-LONG"
+  ]
+ },
+ {
+  "id": "c27",
+  "kind": "text",
+  "text": "Lumora Cloud helps every team plan its work. Try Lumora Cloud free for 14 days. Terms apply.",
+  "expect": []
+ },
+ {
+  "id": "c28",
+  "kind": "text",
+  "text": "[colors: fg=#FFFFFF bg=#F5A524]",
+  "expect": [
+   "AX-CONTRAST"
+  ]
+ },
+ {
+  "id": "c29",
+  "kind": "text",
+  "text": "[colors: fg=#FFFFFF bg=#1F4FD8]",
+  "expect": []
+ },
+ {
+  "id": "c30",
+  "kind": "text",
+  "text": "[colors: fg=#1A1A1A bg=#F4F6FB]",
+  "expect": []
+ },
+ {
+  "id": "c31",
+  "kind": "text",
+  "text": "[colors: fg=#7A7A7A bg=#FFFFFF]",
+  "expect": [
+   "AX-CONTRAST",
+   "VIS-PALETTE"
+  ]
+ },
+ {
+  "id": "c32",
+  "kind": "html",
+  "text": "<img src=\"hero.jpg\"><p>Hi</p>",
+  "expect": [
+   "AX-ALT-MISSING"
+  ]
+ },
+ {
+  "id": "c33",
+  "kind": "html",
+  "text": "<img src=\"hero.jpg\" alt=\"Team at a whiteboard\">",
+  "expect": []
+ },
+ {
+  "id": "c34",
+  "kind": "html",
+  "text": "<img src=\"hero.jpg\" alt=\"image\">",
+  "expect": [
+   "AX-ALT-WEAK"
+  ]
+ },
+ {
+  "id": "c35",
+  "kind": "html",
+  "text": "<img src=\"logo-old.png\" alt=\"Lumora logo\">",
+  "expect": [
+   "VIS-LOGO-VARIANT"
+  ]
+ },
+ {
+  "id": "c36",
+  "kind": "html",
+  "text": "<img src=\"logo-primary.svg\" width=\"400\" height=\"100\" alt=\"Lumora\">",
+  "expect": []
+ },
+ {
+  "id": "c37",
+  "kind": "html",
+  "text": "<img src=\"logo-primary.svg\" width=\"400\" height=\"220\" alt=\"Lumora\">",
+  "expect": [
+   "VIS-LOGO-DISTORTED"
+  ]
+ },
+ {
+  "id": "c38",
+  "kind": "html",
+  "text": "<a href=\"/pricing\">click here</a>",
+  "expect": [
+   "AX-LINK"
+  ]
+ },
+ {
+  "id": "c39",
+  "kind": "html",
+  "text": "<p style=\"color:#ffffff;background:#F5A524\">Sale</p>",
+  "expect": [
+   "AX-CONTRAST"
+  ]
+ },
+ {
+  "id": "c40",
+  "kind": "html",
+  "text": "<div style=\"color:#123456\">x</div>",
+  "expect": [
+   "VIS-PALETTE"
+  ]
+ },
+ {
+  "id": "c41",
+  "kind": "markdown",
+  "text": "![](hero.png)\n\nSee [click here](/docs).",
+  "expect": [
+   "AX-ALT-MISSING",
+   "AX-LINK"
+  ]
+ },
+ {
+  "id": "c42",
+  "kind": "markdown",
+  "text": "![Team planning](hero.png)\n\nSee [the pricing page](/pricing).",
+  "expect": []
+ },
+ {
+  "id": "c43",
+  "kind": "text",
+  "text": "We guarantee you will love it, said the guys at LUMORA.",
+  "expect": [
+   "TERM-006",
+   "TERM-001"
+  ]
+ },
+ {
+  "id": "c44",
+  "kind": "text",
+  "text": "Our support team replies within 4 business hours.",
+  "expect": []
+ },
+ {
+  "id": "c45",
+  "kind": "text",
+  "text": "Our support team replies within 1 hour.",
+  "expect": [
+   "CLAIM-MISMATCH"
+  ]
+ }
+]

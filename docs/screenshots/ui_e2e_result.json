@@ -1,0 +1,71 @@
+{
+ "steps": [
+  {
+   "result": "PASS",
+   "step": "creator logs in; content list renders"
+  },
+  {
+   "result": "PASS",
+   "step": "sample draft checked; 7 highlighted findings"
+  },
+  {
+   "result": "PASS",
+   "step": "each finding shows its source: Source G-NAME: Brand and product names | Write the company name as 'Lumora' (capital L, rest lowercase). The p"
+  },
+  {
+   "result": "PASS",
+   "step": "10 findings offer an opt-in accept button (nothing auto-applied)"
+  },
+  {
+   "result": "PASS",
+   "step": "accept suggestion -> Suggestion applied as a new revision; text changed: True"
+  },
+  {
+   "result": "PASS",
+   "step": "submit for review -> Submitted for review"
+  },
+  {
+   "result": "PASS",
+   "step": "reviewer approve while high findings open -> 4 high-severity finding(s) are still open. Resolve them, or a manager can approve with an override reason."
+  },
+  {
+   "result": "PASS",
+   "step": "reviewer requests changes -> Changes requested"
+  },
+  {
+   "result": "PASS",
+   "step": "rewrite saved as new revision and re-checked -> New revision saved; no open findings: True"
+  },
+  {
+   "result": "PASS",
+   "step": "resubmit -> Submitted for review"
+  },
+  {
+   "result": "PASS",
+   "step": "reviewer approves -> Approved"
+  },
+  {
+   "result": "PASS",
+   "step": "manager publishes -> Published"
+  },
+  {
+   "result": "PASS",
+   "step": "insights page renders"
+  },
+  {
+   "result": "PASS",
+   "step": "audit log renders (46 rows)"
+  },
+  {
+   "result": "PASS",
+   "step": "AI and data disclosure page renders"
+  },
+  {
+   "result": "FAIL",
+   "step": "phone width 390px: page scrollWidth=582 (<=400 means no horizontal page scroll)"
+  }
+ ],
+ "console_errors": [
+  "Failed to load resource: the server responded with a status of 409 (Conflict)"
+ ]
+}
