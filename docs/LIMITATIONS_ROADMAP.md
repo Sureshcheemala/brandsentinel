@@ -8,7 +8,7 @@
 5. PDF and video are not supported.
 6. Contrast is checked only where colours are declared (HTML inline styles or a `[colors: …]` line).
 7. SQLite, single process, bearer tokens kept in browser session storage, no SSO or HTTPS termination.
-8. The tone check is not a judge of voice quality; an optional external AI opinion exists but is untested live.
+8. The tone check is not a judge of voice quality; an optional source-grounded AI review exists, proven with a fake model but not yet run against the live API.
 9. The UI uses browser prompts for dismissal reasons, and has not been tested with assistive technology.
 
 ## Roadmap

@@ -61,8 +61,8 @@
    "step": "AI and data disclosure page renders"
   },
   {
-   "result": "FAIL",
-   "step": "phone width 390px: page scrollWidth=582 (<=400 means no horizontal page scroll)"
+   "result": "PASS",
+   "step": "phone width 390px: page scrollWidth=390 (<=400 means no horizontal page scroll)"
   }
  ],
  "console_errors": [

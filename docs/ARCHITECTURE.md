@@ -7,7 +7,7 @@ Browser (single-page UI, vanilla JS, no framework, strict CSP)
 app/server.py  ── routing, auth, roles, workflow state machine, insights, audit
    │                │
    │                ├── app/engine.py   deterministic checks, each finding cites its source
-   │                ├── app/llm.py      OPTIONAL tone second opinion (off by default)
+   │                ├── app/llm.py      OPTIONAL source-grounded AI review (off by default)
    ▼                ▼
 app/db.py ── SQLite: users, sessions, brandkit (versioned), items, revisions, comments, events, audit
 data/brandkit.json  guidelines · terminology · approved facts (with expiry) · palette · assets

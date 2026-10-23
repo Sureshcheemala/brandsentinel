@@ -9,12 +9,12 @@ Built for the Inkloom AI brand-governance challenge. Sample brand: **Lumora** (a
 ```bash
 python3 run.py                  # http://127.0.0.1:8000
 python3 seed_demo.py            # optional: fills the Insights page with demo activity (in a second terminal)
-python3 -m unittest discover -s tests -t .      # 47 tests
+python3 -m unittest discover -s tests -t .      # 62 tests
 python3 evaluation/eval.py                      # precision/recall on 45 labelled cases
 python3 evaluation/eval.py heldout.json         # 12 cases not used for tuning
 ```
 
-Requires Python 3.9+ (developed on 3.13). Docker: `docker build -t brandsentinel . && docker run -p 8000:8000 brandsentinel`.
+Requires Python 3.9+ (developed on 3.13). Deployment and the optional AI setting: see `docs/DEPLOY.md`. Docker: `docker build -t brandsentinel . && docker run -p 8000:8000 brandsentinel`.
 
 Demo users (password `demo123`, change with `BS_DEMO_PASSWORD`): `ana`, `ben` (creators), `mira` (reviewer), `raj` (manager), `root` (admin).
 

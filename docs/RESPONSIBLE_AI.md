@@ -19,7 +19,7 @@ Each finding shows the quoted evidence, why it was raised, and the exact guideli
 
 ## Disclosure of AI and external services
 - The product's findings come from a rules engine, not a model.
-- An optional external AI tone opinion exists in `app/llm.py`. It is **off by default** and turns on only when `BS_EXTERNAL_AI=on` and `ANTHROPIC_API_KEY` are both set. When on, only the draft text and the voice guideline text are sent, never the brand library, assets, user data or other items. Its findings are labelled "AI-assisted", always need human judgement, must quote text that exists verbatim in the draft, and are never auto-applied. The UI's **AI & data** page and every review report state whether it was used. This module has not been run against the live API in the build environment, so treat it as untested.
+- An optional source-grounded AI review (Claude, via the Anthropic API) exists in `app/llm.py`. It is **off by default** and turns on only when `BS_EXTERNAL_AI=on` and `ANTHROPIC_API_KEY` are both set. When on, only the draft plus the guideline and approved-fact snippets relevant to it are sent (never the rest of the brand library, assets or user data). Every AI finding must cite a snippet that was sent and quote the draft verbatim or it is discarded; findings are labelled AI-assisted, low-confidence, need human judgement and are never applied automatically; any failure falls back to the rules result. Verified with a fake model (tests/test_llm.py), not yet against the live API.
 - Development used an AI coding assistant; see DISCLOSURES.md.
 
 ## Security measures implemented

@@ -23,7 +23,7 @@ Submit → check → explain → creator decides → review (comments, request c
 Python standard library (http.server, sqlite3, zipfile), vanilla JavaScript UI, JSON brand kit, Docker file. Rationale in ARCHITECTURE.md.
 
 ## 7. Evidence of quality
-47 automated tests pass. Rules engine scored 36/36 expected findings with 0 false alarms on the 45-case development set and 7/7 with 0 false alarms on 12 held-out cases, with the caveat that cases were written by the developers (TESTING.md). Four real defects found by evaluation were fixed. **No real-user testing has been completed; the kit is in USER_TESTING_KIT.md.** Add real results here before submitting.
+62 automated tests pass (14 cover the AI module with a fake model; the live API is untested). Rules engine scored 36/36 expected findings with 0 false alarms on the 45-case development set and 7/7 with 0 false alarms on 12 held-out cases, with the caveat that cases were written by the developers (TESTING.md). Four real defects found by evaluation were fixed. **No real-user testing has been completed; the kit is in USER_TESTING_KIT.md.** Add real results here before submitting.
 
 ## 8. Impact (hypotheses, to be measured)
 Fewer review rounds, faster time from draft to approval, fewer unsupported claims reaching reviewers, and a ranked list of unclear guidelines. The demo data shows the mechanism works; it does not prove the size of the effect.

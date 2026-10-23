@@ -102,7 +102,7 @@ def run_review(c, item, kind, content, blob=None, meta=None):
         findings, claims = res["findings"], res["claims"]
         if kind == "docx":
             findings += engine.docx_extra_findings(kit, json.loads(item["extra_json"] or "[]"))
-        extra = llm.second_opinion(kit, content)
+        extra = llm.second_opinion(kit, content, findings)
         if extra:
             ai = True
             findings += extra

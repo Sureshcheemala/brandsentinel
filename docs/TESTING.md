@@ -2,10 +2,13 @@
 
 Results below were produced by running the commands in this repository on the build machine (Python 3.13).
 
-## Automated tests: 47 passing
+## Automated tests: 62 passing (47 from the 21 Oct base, 15 added 23 Oct)
 `python3 -m unittest discover -s tests -t .`
 - `tests/test_engine.py` (28): terminology (including domains and emails not flagged), claims (supported, contradicted, expired, unverified, offers), tone, contrast maths and fix round-trip, images and links in HTML and Markdown, decorative empty alt allowed, docx extraction, PNG size and logo distortion, suggestion apply/refuse, every finding has a source.
 - `tests/test_api.py` (19): login, throttle, security headers, path traversal, validation, accept/dismiss rules, dismissal persistence across revisions, role restrictions, privacy between creators, the full workflow (submit, request changes, resubmit, approve, publish), override rules and audit, comments, docx and image flows, insights access, brand-kit admin and regex validation, AI disclosure default.
+
+## AI review tests (added 23 Oct, `tests/test_llm.py`, 14 tests, fake model)
+The Claude call is replaced by a fake transport so the safety logic is proven without a network: off by default and nothing sent when off; needs both the switch and a key; a valid, cited, verbatim finding is kept and labelled AI-assisted with manual-only guidance; findings citing an unknown or unsent source, or quoting text not in the draft, are discarded; duplicates of rules findings are dropped; a cap of 5; timeouts, bad JSON and malformed replies return no findings; a prompt-injection draft cannot produce a finding that fails the checks; only relevant snippets plus the draft are sent; and an end-to-end API test shows AI findings flowing into a review and the disclosure page. **The live Anthropic API has not been exercised**: enable it on the deployed site and review one draft to confirm.
 
 ## Accuracy evaluation of the rules engine
 `python3 evaluation/eval.py` (45 labelled snippets, used while developing) and `python3 evaluation/eval.py heldout.json` (12 snippets written afterwards, not used for tuning).

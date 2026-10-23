@@ -37,7 +37,7 @@ A pre-publication brand-governance tool. A creator submits text, Markdown, HTML,
 - **Back end:** Python 3.13 standard library only (`http.server`, `sqlite3`, `hashlib`, `zipfile`, `difflib`, `re`). Rules engine in `app/engine.py`, API and workflow in `app/server.py`, storage in `app/db.py`.
 - **Front end:** hand-written HTML, CSS and JavaScript, no framework, no CDN. User content is rendered with `textContent`, never `innerHTML`.
 - **Data:** SQLite; the brand kit is a versioned JSON file (`data/brandkit.json`) of guidelines, approved facts with expiry dates, terms, palette and assets.
-- **AI:** none by default. `app/llm.py` is an optional tone second opinion that is **off** unless `BS_EXTERNAL_AI=on` and an API key are set; it has not been run against the live API. This is a known gap, and the first Round 3 improvement.
+- **AI:** a source-grounded review using Claude (Anthropic API, model `claude-sonnet-5-5`, changeable with `BS_AI_MODEL`), **off by default** and enabled by `BS_EXTERNAL_AI=on` plus an `ANTHROPIC_API_KEY` secret on the host. It retrieves only the guideline and approved-fact snippets relevant to the draft and sends those plus the draft. Every AI finding must cite a snippet that was sent and quote the draft verbatim, or it is discarded. AI findings are labelled, low-confidence, need human judgement, offer guidance only (never an automatic replacement) and are never applied automatically. Any API failure falls back to the rules result. **Tested with a fake model (14 tests); not yet run against the live API**, so enable it on the deployed site and check one real review before relying on it.
 - **Deployment:** `Dockerfile` (listens on `PORT`); health check at `/api/health`.
 - **Decision rationale:** deterministic rules are explainable, free of hallucination and need no confidential data to leave the organisation; a model is meant to be added only as a labelled, source-grounded second opinion.
 
@@ -46,7 +46,7 @@ A pre-publication brand-governance tool. A creator submits text, Markdown, HTML,
 |---|---|---|
 | React + TypeScript front end | Vanilla JavaScript single-page app | No build step; runs anywhere; easier for judges to open |
 | FastAPI + PostgreSQL + pgvector | Standard-library Python server + SQLite | Zero dependencies; no database server to host; retrieval is not needed while checks are rule-based |
-| Language model for tone, claims and rewrites | Rules engine; optional model module (off, untested live) | Reliability and explainability first; the model layer moves to Round 3 |
+| Language model for tone, claims and rewrites | Rules engine as the core, plus an optional source-grounded Claude review for tone and guideline issues | Reliability and explainability first; the model is a labelled second opinion. Claim extraction and rewrites by model are Round 3 |
 | PDF input | Not built | Deferred to Round 3 |
 | Encryption at rest, SSO, Docs/Word add-ins | Not built | Deferred to the roadmap |
 | Round 1 "three improvements" (accuracy, image checks, clarity report) | Largely delivered in basic form | Replaced by the new Round 3 improvements below |
@@ -54,24 +54,25 @@ A pre-publication brand-governance tool. A creator submits text, Markdown, HTML,
 ## 6. Work completed inside the window
 Starting 23 October (see the repository's dated commits):
 - One-click demo accounts on the login page, so judges can use the product without guidance (checked in a real browser).
-- `/api/health` endpoint and test (48 automated tests now pass).
+- `/api/health` endpoint and test.
+- Source-grounded AI review (`app/llm.py`): retrieval of relevant guideline and fact snippets, mandatory source citation and verbatim quotes, discard of anything unsupported, failure fallback, prompt-injection hygiene, AI labelling in the UI and disclosure page, and 14 new tests (62 pass in total).
 - This Round 2 submission, the disclosure statement and the PDF.
 - Public repository with dated commits. The first commit is the disclosed 21 October base; later commits are in-window work.
 
 Done on 21 October, so it belongs to the disclosed base and is **not** claimed as in-window: the scripted Chromium test of the full workflow, the phone-width scrolling fix, and the Round 3 presentation draft.
 
 ## 7. Evidence of testing
-48 automated tests pass. Rules engine: 36 of 36 expected findings with 0 false alarms on the 45-case development set; 7 of 7 with 0 false alarms on 12 held-out cases. The cases were written by the developers for their own rules, so these figures show the engine does what its rules say, not accuracy on real marketing copy. **No real-user testing has been completed yet.** Details and screenshots: `docs/TESTING.md`, `docs/screenshots/`.
+62 automated tests pass (14 cover the AI module using a fake model). Rules engine: 36 of 36 expected findings with 0 false alarms on the 45-case development set; 7 of 7 with 0 false alarms on 12 held-out cases. The cases were written by the developers for their own rules, so these figures show the engine does what its rules say, not accuracy on real marketing copy. **No real-user testing has been completed yet.** Details and screenshots: `docs/TESTING.md`, `docs/screenshots/`.
 
 ## 8. Three improvements for Round 3
-1. **Source-grounded AI review that actually runs.** Retrieve the relevant guideline and fact snippets, send only those plus the draft to a language model, and require every model finding to cite a retrieved source or be discarded. Add a labelled evaluation set that compares rules-only vs rules-plus-model on precision, recall and false alarms, show AI-assisted findings with a distinct label, and let admins switch external calls off.
+1. **Measured AI quality: model-assisted claim extraction and rewrites, evaluated.** Extend the AI review from tone to claim extraction against approved facts and to suggested rewrites, build a labelled evaluation set run against the live model, and report precision, recall, false alarms and the share of AI findings that reviewers accept, rules-only vs rules-plus-AI. Add admin controls (per-workspace on/off, redaction of confidential names before sending, spend limit).
 2. **PDF input and real visual analysis.** Extract text and images from PDFs (including per-page findings), detect logo presence and clear-space, measure on-palette colour share and text-over-image contrast from pixels, and flag layout issues on image and PDF assets.
 3. **Integrations and team workflow.** Reviewer assignment and due dates, email or Slack notifications on submit, changes requested and approval, a publish webhook for a CMS, and a minimal Google Docs or Word add-in that sends a draft for review. Includes SSO-ready authentication.
 
 Each is a new capability, not a cosmetic change, and each is tested and evaluated in Round 3.
 
 ## 9. Known limitations
-Rule-based claim matching needs testing on real copy; no real-user or screen-reader testing yet; English only; SQLite and a single server suit a demo, not heavy traffic; no encryption at rest. See `docs/LIMITATIONS_ROADMAP.md`.
+Rule-based claim matching needs testing on real copy; no real-user or screen-reader testing yet; AI review not yet run against the live API; English only; SQLite and a single server suit a demo, not heavy traffic; no encryption at rest. See `docs/LIMITATIONS_ROADMAP.md`.
 
 ## 10. Team contributions
 To be completed by each member accurately: `docs/CONTRIBUTIONS.md`. Do not claim work you did not do; judges may ask any member to explain or demonstrate their part.
